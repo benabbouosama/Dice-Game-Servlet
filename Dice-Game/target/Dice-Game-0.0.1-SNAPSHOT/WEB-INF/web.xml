@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
+
+    <!-- On stocke les chemains des vue dans le context -->
+    <context-param>
+        <param-name>inscrConnForms</param-name>
+        <param-value>/WEB-INF/vues/home/IncrConnForms.jsp</param-value>
+    </context-param>
+    <context-param>
+        <param-name>bestScoresPage</param-name>
+        <param-value>/WEB-INF/vues/GamePages/AllPlayersResults.jsp</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Home</param-name>
+        <param-value>/WEB-INF/vues/GamePages/Home.jsp</param-value>
+    </context-param>
+    <context-param>
+        <param-name>ResultPage</param-name>
+        <param-value>/WEB-INF/vues/GamePages/ResultPage.jsp</param-value>
+    </context-param>
+
+
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/vues/home/IncrConnForms.jsp</welcome-file>
+    </welcome-file-list>
+
+
+
+    <filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>/gamePages/*</url-pattern>
+        <url-pattern>/RollDice</url-pattern>
+        <url-pattern>/AllPlayersResults</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>BehaviourFilter</filter-name>
+        <url-pattern>/ConnServlet</url-pattern>
+        <url-pattern>/FormSelect</url-pattern>
+        <url-pattern>/InscriptionServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <display-name>ConnFilter</display-name>
+        <filter-name>ConnFilter</filter-name>
+        <filter-class>com.web.filters.ConnexionFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ConnFilter</filter-name>
+        <url-pattern>/ConnexionServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <display-name>InscriptionFilter</display-name>
+        <filter-name>InscriptionFilter</filter-name>
+        <filter-class>com.web.filters.InscriptionFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>InscriptionFilter</filter-name>
+        <url-pattern>/InscriptionServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <display-name>SecurityFilter</display-name>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>com.web.filters.SecurityFilter</filter-class>
+    </filter>
+
+
+    <filter>
+        <display-name>BehaviourFilter</display-name>
+        <filter-name>BehaviourFilter</filter-name>
+        <filter-class>com.web.filters.BehaviourFilter</filter-class>
+    </filter>
+
+</web-app>

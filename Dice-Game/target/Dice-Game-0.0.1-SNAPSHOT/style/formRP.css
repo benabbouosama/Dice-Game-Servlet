@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form Styles */
+.form-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    padding: 20px;
+}
+
+.message-container {
+    margin-bottom: 20px;
+}
+
+.message-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.message {
+    margin-bottom: 5px;
+}
+
+.message.INFO {
+    color: green;
+}
+
+.message.WARN {
+    color: orange;
+}
+
+.message.ERROR {
+    color: red;
+}
+
+.dice-container {
+    margin-bottom: 20px;
+}
+
+.dice-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dice-table th,
+.dice-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.dice-table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.dice-table td {
+    text-align: center;
+}
+
+.score-info {
+    margin-bottom: 20px;
+}
+
+.actions {
+    text-align: center;
+}
+
+.actions a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
