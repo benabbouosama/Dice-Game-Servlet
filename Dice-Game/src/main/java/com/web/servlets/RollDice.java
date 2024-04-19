@@ -86,8 +86,8 @@ public class RollDice extends HttpServlet {
             getServletContext().getRequestDispatcher(resultPage).forward(request, response);
             return;
 
-            // On teste le résultat du premier et deuxième dés
-        } else if (diceNumber == 1 && resultatLance > 4 || diceNumber == 2 && resultatLance > 5 ) {
+         // On teste le résultat des dés
+        } else if ( (diceNumber == 1 && resultatLance > 4) ||( diceNumber == 2 && resultatLance > 5) || (diceNumber == 2 && resultatLance == 1) || (diceNumber == 3 && resultatLance < 3) ) {
             // On mettre à jour les tentatives du joueur
             attempts.set(diceNumber-1, resultatLance);
 
