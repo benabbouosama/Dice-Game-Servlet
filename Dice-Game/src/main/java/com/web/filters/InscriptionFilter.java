@@ -50,7 +50,7 @@ public class InscriptionFilter extends HttpFilter implements Filter {
         // On teste si l'utilisateur avec le même Login existe déja
         if(gameContext.getPlayerByLogin(login) != null) {
             // On ajoute un message
-            messages.add(new Message("Il existe un utilisateur avec le même identifiant", Message.WARN));
+            messages.add(new Message("There is already a user with the same login.", Message.WARN));
             // Mettre la liste des messages dans les attributs de la requête
             request.setAttribute("messages", messages);
             // On envoie la vue d'inscription
@@ -58,7 +58,7 @@ public class InscriptionFilter extends HttpFilter implements Filter {
             return;
         }
         // On ajoute un message de réussite
-        messages.add(new Message("Utilisateur correctement ajouté", Message.INFO));
+        messages.add(new Message("User successfully added", Message.INFO));
 
         request.setAttribute("messages", messages);
 
